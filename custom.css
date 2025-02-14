@@ -1,0 +1,169 @@
+:root {
+  --custom-primary: #5f7adb;
+  --custom-secondary: #a2b2ee;
+  --custom-accent: #7b8cdd;
+  --custom-text: #26292b;
+  --custom-light-bg: #ffffff;
+  --custom-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --custom-transition: all 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.browser-tab:focus {
+  outline: 2px solid var(--custom-primary);
+  outline-offset: 2px;
+}
+
+.browser-tab {
+  background: var(--custom-light-bg);
+  color: var(--custom-text);
+  transition: var(--custom-transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.browser-tab:hover {
+  background: var(--custom-secondary);
+  color: var(--custom-text);
+  transform: translateY(-3px);
+}
+
+.browser-tab.active {
+  background: var(--custom-primary);
+  color: white;
+  box-shadow: var(--custom-shadow);
+}
+
+.browser-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3px;
+  background: var(--custom-accent);
+  border-radius: 3px 3px 0 0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  transition: var(--custom-transition);
+}
+
+.card-service-item .card-service-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-service-button:hover {
+  transform: translateY(-5px);
+  background-color: var(--custom-primary);
+}
+
+.card-service-item {
+  perspective: 1000px;
+  transition: transform 0.5s ease;
+}
+
+.card-service-item:hover {
+  transform: scale(1.05);
+}
+
+.card-service-item .card-img-top {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card-service-item.is-flipped .card-inner,
+.card-back {
+  transform: rotateY(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.browser-tab {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.card-service-item {
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.card-service-item .card-service-button {
+  margin-top: 0.5rem;
+}
+
+.card-service-item .card-img-top {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.card-service-item.is-flipped .card-inner,
+.card-back {
+  transform: rotateY(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+@media (max-width: 576px) {
+  .faq-item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .faq-item {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-service-item {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .card-service-item .card-service-button {
+    margin-top: 1rem;
+  }
+}
